@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Gesture Recognition</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="images/logo.gif" alt="Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times-circle" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="http://127.0.0.1:5501">Words and Speech Converter</a></li>
+                    <li><a href="http://127.0.0.1:5000">Code</a></li>
+                    <li><a href="https://github.com/PravallikaEppali11/Hand-Gesture-Recognition">Project Source Code</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>            
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Hand Gesture Recognition</h1>
+            <p>Hand gesture recognition involves using computer vision techniques to interpret and understand the movements and positions of hands, often used in sign language communication.</p>
+            <a href="about.html" class="hero-btn">Visit Us to know More about it...</a>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>Alphabet's to Sign Language Converter</h2>
+        <div id="container"></div>
+        <div id="navbar"> 
+                <h5>Alphabet's Sign Language Converter is an innovative tool designed to bridge communication gaps between hearing and deaf individuals. Leveraging machine learning and computer vision, it translates spoken language into sign language gestures in real-time. This technology aims to enhance accessibility and inclusion for the deaf community by providing a seamless means of communication in various settings.</h5>
+        </div>
+        <h2>Words's to Sign Language Converter</h2>
+        <div id="container"></div>
+        <div id="navbar"> 
+                <h5>A Words to Sign Language Converter is a tool designed to translate spoken or written words into sign language gestures or signs. It utilizes algorithms and databases of sign language vocabularies to generate accurate representations of the inputted words or phrases. Users can input text or speech, and the converter outputs corresponding signs, aiding communication for individuals who are deaf or hard of hearing.</h5>
+        </div>
+        <h2>Speech to Sign Language Converter</h2>
+        <div id="container"></div>
+        <div id="navbar"> 
+                <h5>A Speech to Sign Language Converter is a technology designed to translate spoken language into sign language. It utilizes speech recognition algorithms to interpret spoken words and then generates corresponding signs using a sign language avatar or animation. This innovation aims to facilitate communication between individuals who are deaf or hard of hearing and those who use spoken language, fostering greater inclusivity and accessibility in various contexts.</h5>
+        </div>
+    </section>
+    <section class="data">
+        <div class="row">
+            <div class="data-col">
+                <img src="images/dataset.jpg" alt="Graph">
+                <h3>DataSet</h3>
+                <p>Facial Expressions</p>
+            </div>
+            <div class="data-col">
+                <img src="images/sign.png" alt="Graph">
+                <h3>Sign Language web</h3>
+            </div>
+            <div class="data-col">
+                <img src="images/Model Working.png" alt="Model Working">
+                <h3>Model Working</h3>
+                <p>Schematic representation of Basic Convolutional Neural Network</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Team Contact</h2>
+        <a href="contact.html" class="hero-btn">CONTACT US</a>
+    </section>
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Students from KL University</p>
+    </section>
+    <script>
+        // Add your JavaScript code here
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+        const wordToImage = {
+            'Yes': 'Yes.gif',
+            'Thankyou': 'Thank you.jpg',
+            'Socialmedia': 'SocialMedia.gif',
+            'Please help me': 'Please Help Me.gif',
+            'Pain': 'pain.gif',
+            'No': 'No.gif',
+            'Iunderstand': 'Iunderstand.gif',
+            'Idontunderstand': 'I dont understand.gif',
+            'Hot': 'Hot.gif',
+            'Hello': 'Hello.gif',
+            'Goodnight': 'Good night.gif',
+            'Goodmorning': 'Good morning.gif',
+            'Goodevening': 'Good evening.gif',
+            'Dance': 'Dance.gif',
+            'Cook': 'Cookie.gif',
+            'Whatareyoudoing': 'What Are You Doing.gif',
+            'Please': 'Please.gif',
+            'Goawayandleavemealonebyebye': 'go away and leave me alone bye bye.gif',
+            'Whatisyourname': 'What Is Your Name.gif',
+            'Whenisclassfinished': 'When Is Class Finished.gif',
+            'Seeyoulater': 'See You Later.gif',
+            'Ilikeit': 'I like it.gif',
+            'Ienjoythis': 'i enjoy this.gif',
+            'Youarewelcome': 'you are welcome.png',
+            'Howareyou': 'how are you.png',
+            'Nicetomeetyou': 'nice to meet you.png',
+            'Haveaniceday': 'have a nice day.png',
+            'Canihelpyou': 'canIhelpyou.png', 
+        };
+    
+        function convertToSignLanguage() {
+          const inputText = document.getElementById('textInput').value.trim();
+          const container = document.getElementById('container');
+          container.innerHTML = '';
+    
+          // Split input text into words
+          const words = inputText.split(/\s+/);
+    
+          // Iterate through each word
+          words.forEach(word => {
+            const formattedWord = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(); // Capitalize first letter, lowercase rest
+            if (wordToImage.hasOwnProperty(formattedWord)) {
+              const img = document.createElement('img');
+              img.src = wordToImage[formattedWord];
+              img.alt = formattedWord;
+              img.classList.add('letter');
+              container.appendChild(img);
+            }
+          });
+        }
+      </script>
+      <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+        
+        const letterToImage = {
+            'A': 'a.jpg',
+            'B': 'b.jpg',
+            'C': 'c.jpg',
+            'D': 'd.jpg',
+            'E': 'e.jpg',
+            'F': 'f.jpg',
+            'G': 'g.jpg',
+            'H': 'h.jpg',
+            'I': 'i.jpg',
+            'J': 'j.jpg',
+            'K': 'k.jpg',
+            'L': 'l.jpg',
+            'M': 'm.jpg',
+            'N': 'n.jpg',
+            'O': 'o.jpg',
+            'P': 'p.jpg',
+            'Q': 'q.jpg',
+            'R': 'r.jpg',
+            'S': 's.jpg',
+            'T': 't.jpg',
+            'U': 'u.jpg',
+            'V': 'v.jpg',
+            'W': 'w.jpg',
+            'X': 'x.jpg',
+            'Y': 'y.jpg',
+            'Z': 'z.jpg',
+        };
+        function convertToSignLanguage() {
+            const inputText = document.getElementById('textInput').value.toUpperCase(); // Convert input to uppercase
+            const container = document.getElementById('container');
+            container.innerHTML = '';
+
+            for (let i = 0; i < inputText.length; i++) {
+                const letter = inputText[i];
+                if (letterToImage.hasOwnProperty(letter)) { // Check if the letter exists in the mapping
+                    const img = document.createElement('img');
+                    img.src = 'images/' + letterToImage[letter]; // Assuming images are in 'images' directory
+                    img.alt = letter;
+                    img.classList.add('letter');
+                    container.appendChild(img);
+                }
+            }
+            // Expand image container to 100% width after conversion
+            //document.getElementById('image-container').style.width = '100%'; // No 'image-container' element in the HTML
+        }
+        
+    </script>
+</body>
+</html>

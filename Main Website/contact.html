@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Hand gesture recognition</title>
+    <link rel ="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/logo.gif"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times-circle" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="http://127.0.0.1:5501">Words and Speech Converter</a></li>
+                        <li><a href="http://127.0.0.1:5000">Code</a></li>
+                        <li><a href="https://github.com/PravallikaEppali11/Hand-Gesture-Recognition">Project Source Code</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>            
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>Contact Us</h1>
+    
+</section>
+    
+<!------contact content------->
+
+<section class="location">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.3167670922576!2d78.33773431487573!3d17.348483988101925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb959fee5b3bad%3A0x294b001a89bbce8f!2sK%20L%20University%20Hyderabad!5e0!3m2!1sen!2sin!4v1645950002650!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+</section>
+<section class="contact-us">
+    
+    <div class="row">
+        <div class="contact-col">
+            <div>
+                <i class="fa fa-home"></i>
+                <span>
+                    <h5>R.V.S Nagar, Moinabad-Chilkur Rd </h5>
+                    <p>near AP Police Academy, Aziznagar, Telangana 500075</p>
+                </span>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <span>
+                    <h5>+91 8121503228</h5>
+                    <p>Monday to Saturday, 6AM to 4PM</p>
+                </span>
+            </div>
+            <div>
+                <i class="fa fa-envelope-o"></i>
+                <span>
+                    <h5>2010030168cse@gmail.com</h5>
+                    <h5>2010030362cse@gmail.com</h5>
+                    <h5>2010030046cse@gmail.com</h5>
+                    <h5>2010030550cse@gmail.com</h5>
+                    <p>Email us your query</p>
+                </span>
+            </div>
+        </div>
+        <div class="contact-col">
+            
+            <form action="form-handler.php" method="post">
+                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="email" name="email" placeholder="Enter Email address" required>
+                <input type="text" name="subject" placeholder="Enter your subject" required>
+                <textarea rows="8" name="message" placeholder="Message" required></textarea>
+                <button type="submit" class="hero-btn rred-btn">Send Message</button>
+            </form>
+            
+        </div>
+    </div>
+</section>   
+    
+    
+    
+    
+    
+<!----- footer ----------> 
+<section class="footer">
+    <h4>About Us</h4>
+    <p>Students from KL University</p>
+      
+    
+<!-----JavaScript for Toggle Menu----->
+<script>
+    
+    var navLinks = document.getElementById("navLinks");
+    
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+</script>  
+    
+    
+</body>
+</html>
