@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Words to Sign Language</title>
+  <style>
+    /* Add your CSS styles here */
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('bg.jpg'); /* Specify the URL of your GIF */
+      background-size: cover;
+    }
+    h1 {
+      margin-bottom: 20px;
+      z-index: 1; /* Ensure the title is above the background */
+    }
+    #container {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      width: 80%; /* Adjust as needed */
+    }
+    #text-container, #image-container {
+      width: 35%;
+      box-sizing: border-box; /* Include padding in the width */
+      z-index: 1; /* Ensure the containers are above the background */
+    }
+    .letter {
+      width: 100%;
+      height: auto;
+      margin: 5px;
+      border: 1px solid black;
+    }
+    #text-input {
+      margin: 10px 0 20px;
+      font-size: 14px;
+      box-sizing: border-box; /* Include padding in the width */
+      width: calc(100% - 10px); /* Subtract the button's margin */
+    }
+    #convert-button {
+      margin: 0 auto; /* Center the button horizontally */
+      display: block; /* Ensure block-level display for margin auto to work */
+    }
+  </style>
+</head>
+<body>
+  <h1>Words to Sign Language Converter</h1>
+  <div id="text-container">
+    <textarea id="textInput" placeholder="Enter text here"></textarea>
+    <button id="convert-button" onclick="convertToSignLanguage()">Convert</button>
+  </div>
+  <div id="container"></div>
+
+  <script>
+    // Add your JavaScript code here
+    const wordToImage = {
+        'Yes': 'Yes.gif',
+        'Thankyou': 'Thank you.jpg',
+        'Socialmedia': 'SocialMedia.gif',
+        'Please help me': 'Please Help Me.gif',
+        'Pain': 'pain.gif',
+        'No': 'No.gif',
+        'Iunderstand': 'Iunderstand.gif',
+        'Idontunderstand': 'I dont understand.gif',
+        'Hot': 'Hot.gif',
+        'Hello': 'Hello.gif',
+        'Goodnight': 'Good night.gif',
+        'Goodmorning': 'Good morning.gif',
+        'Goodevening': 'Good evening.gif',
+        'Dance': 'Dance.gif',
+        'Cook': 'Cookie.gif',
+        'Whatareyoudoing': 'What Are You Doing.gif',
+        'Please': 'Please.gif',
+        'Goawayandleavemealonebyebye': 'go away and leave me alone bye bye.gif',
+        'Whatisyourname': 'What Is Your Name.gif',
+        'Whenisclassfinished': 'When Is Class Finished.gif',
+        'Seeyoulater': 'See You Later.gif',
+        'Ilikeit': 'I like it.gif',
+        'Ienjoythis': 'i enjoy this.gif',
+        'Youarewelcome': 'you are welcome.png',
+        'Howareyou': 'how are you.png',
+        'Nicetomeetyou': 'nice to meet you.png',
+        'Haveaniceday': 'have a nice day.png',
+        'Canihelpyou': 'canIhelpyou.png', 
+    };
+
+    function convertToSignLanguage() {
+      const inputText = document.getElementById('textInput').value.trim();
+      const container = document.getElementById('container');
+      container.innerHTML = '';
+
+      // Split input text into words
+      const words = inputText.split(/\s+/);
+
+      // Iterate through each word
+      words.forEach(word => {
+        const formattedWord = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(); // Capitalize first letter, lowercase rest
+        if (wordToImage.hasOwnProperty(formattedWord)) {
+          const img = document.createElement('img');
+          img.src = wordToImage[formattedWord];
+          img.alt = formattedWord;
+          img.classList.add('letter');
+          container.appendChild(img);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

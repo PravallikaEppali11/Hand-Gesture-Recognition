@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('bg.jpg'); 
+            background-size: cover;
+        }
+        h1 {
+            margin-bottom: 20px;
+            z-index: 1; 
+        }
+        
+        #navbar ul {
+            display: flex;
+            justify-content: flex-end; 
+            list-style-type: none;
+            padding: 0;
+        }
+        #navbar ul li {
+            margin-left: 20px;
+        }
+        #navbar ul li:first-child {
+            margin-left: 0;
+        }
+        #navbar ul li a {
+            color: #000000;
+            text-decoration: none;
+        }
+        
+        #text-container {
+            width: 30%;
+            box-sizing: border-box; 
+            z-index: 1; 
+        }
+        
+        .letter {
+            width: 400px;
+            height: 400px;
+            margin: 5px;
+            border: 1px solid black;
+        }
+        #text-input {
+      margin: 10px 0 20px;
+      font-size: 14px;
+      box-sizing: border-box; 
+      width: calc(100% - 10px); 
+    }
+    #convert-button {
+      margin: 0 auto; 
+      display: block; 
+    }
+    </style>
+</head>
+<body>
+    <h1>Alphabet's to Sign Language Converter</h1>
+    <div id="text-container">
+        <textarea id="textInput" placeholder="Enter text here"></textarea>
+        <button id="convert-button" onclick="convertToSignLanguage()">Convert</button>
+    </div>
+    <div id="container"></div>
+    <div id="navbar">
+        <ul>
+            <title>Hand Gesture Recognition</title>
+          <li><a href="Words Translation.html">Words to Sign Language</a></li>
+          <li style="margin-left: 200px;"><a href="speech.html">Speech to Sign Language</a></li>
+        </ul>  
+        </n> 
+    </div>
+    <script>
+        // Add your JavaScript code here
+        const letterToImage = {
+            'A': 'a.jpg',
+            'B': 'b.jpg',
+            'C': 'c.jpg',
+            'D': 'd.jpg',
+            'E': 'e.jpg',
+            'F': 'f.jpg',
+            'G': 'g.jpg',
+            'H': 'h.jpg',
+            'I': 'i.jpg',
+            'J': 'j.jpg',
+            'K': 'k.jpg',
+            'L': 'l.jpg',
+            'M': 'm.jpg',
+            'N': 'n.jpg',
+            'O': 'o.jpg',
+            'P': 'p.jpg',
+            'Q': 'q.jpg',
+            'R': 'r.jpg',
+            'S': 's.jpg',
+            'T': 't.jpg',
+            'U': 'u.jpg',
+            'V': 'v.jpg',
+            'W': 'w.jpg',
+            'X': 'x.jpg',
+            'Y': 'y.jpg',
+            'Z': 'z.jpg',
+        };
+        function convertToSignLanguage() {
+            const inputText = document.getElementById('textInput').value.toUpperCase(); 
+            const container = document.getElementById('container');
+            container.innerHTML = '';
+
+            for (let i = 0; i < inputText.length; i++) {
+                const letter = inputText[i];
+                if (letterToImage.hasOwnProperty(letter)) { 
+                    const img = document.createElement('img');
+                    img.src = letterToImage[letter];
+                    img.alt = letter;
+                    img.classList.add('letter');
+                    container.appendChild(img);
+                }
+            }
+            
+            document.getElementById('image-container').style.width = '100%';
+        }
+    </script>
+</body>
+</html>
