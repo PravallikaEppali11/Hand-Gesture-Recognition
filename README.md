@@ -25,5 +25,3 @@ recognition facilitates intuitive and natural interactions
 between humans and machines, contributing to the 
 advancement of user interfaces and immersive experiences.
 
-## Results
-<img src="/path/to/img.jpg">
