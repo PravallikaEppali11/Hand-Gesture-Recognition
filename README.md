@@ -26,4 +26,4 @@ between humans and machines, contributing to the
 advancement of user interfaces and immersive experiences.
 
 ## Results
-![Alt text](https://www.google.com/imgres?q=how%20are%20you%20in%20sign%20language&imgurl=https%3A%2F%2Fwww.rickhansen.com%2Fsites%2Fdefault%2Ffiles%2Finline-images%2FHow%2520are%2520you.png&imgrefurl=https%3A%2F%2Fwww.rickhansen.com%2Fnews-stories%2Fblog%2F6-more-asl-signs-beginners&docid=4M4AfZioD4l2kM&tbnid=ZmaXi5Q-ifntKM&vet=12ahUKEwjQ-6iGuc6FAxW8s1YBHWJaAfIQM3oECBUQAA..i&w=665&h=474&hcb=2&ved=2ahUKEwjQ-6iGuc6FAxW8s1YBHWJaAfIQM3oECBUQAA)
+<img src="/path/to/img.jpg">
